@@ -2,11 +2,15 @@
 
 Este repositório foi desenvolvido pela Consultoria Técnica Gerencianet e tem o objetivo de facilitar a integração com os serviços oferecidos no contexto do arranjo Pix, como criação de cobrança, verificação de Pix recebidos e devolução, bem como o entendimento do qrcode, que deve ser construído seguindo a especificação do [BrCode](https://www.bcb.gov.br/content/estabilidadefinanceira/spb_docs/ManualBRCode.pdf).
 
+## Requisitos
+* PHP >= 5.4
+
 
 ## Testado com as versões
 ```
-php 7.3
+php 5.4, php 7.0 e php 7.3
 ```
+
 ## Como usar?
 Para começar, você deve configurar os parâmetros no arquivo config.json.
 Instancie as informações usando sua `chave PIX` vinculada à sua conta Gerencianet, `client_id`, `client_secret` da sua aplicação e `sandbox` igual a *true*, caso seu ambiente seja de Homologação, ou *false*, caso seja Produção.
@@ -36,9 +40,9 @@ Instancie as informações usando sua `chave PIX` vinculada à sua conta Gerenci
 
 Todas as requisições devem conter um certificado de segurança que será fornecido pela Gerencianet dentro da sua conta. 
 
-Para gerar o seu certificado abra um ticket em https://gerencianet.com.br/fale-conosco/ informando o numero de sua conta e as credenciais client_id e client_secret de desenvolvimento. Nossa equipe ira retornar com o certificado para você realizar o consumo dos endpoints.
+Para gerar o seu certificado abra um ticket em https://gerencianet.com.br/fale-conosco informando o numero de sua conta e as credenciais client_id e client_secret de desenvolvimento. Nossa equipe irá retornar com o certificado `.p12` para você realizar o consumo dos endpoints.
 
-Para a utilizaçã no PHP o certificado deverá ser convertido em .pem. Segue exemplos utilizando o OpenSSL para a conversão.
+Para a utilização no PHP o certificado deverá ser convertido em `.pem`. Segue exemplos utilizando o OpenSSL para a conversão.
 
 **Comando 1**
 ```
@@ -65,7 +69,7 @@ php -S localhost:9000
 
 Em seguida, abra qualquer exemplo em seu navegador.
 
-:warning: Alguns exemplos requerem que você altere alguns parâmetros para funcionar, como por exemplo, o arquivo `emitirPix.php` onde você deve inserir todos os parâmetros da cobrança.
+:warning: Alguns exemplos requerem que você altere alguns parâmetros para funcionar, como por exemplo, o arquivo `emitirPix.php` onde você deve inserir os parâmetros da cobrança.
 
 
 ## Documentação adicional
