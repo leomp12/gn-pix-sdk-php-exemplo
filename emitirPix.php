@@ -74,6 +74,7 @@ if ($tipo === "dinamico") { // Somente será gerado o payload para o QR Code din
   verficaFalhas($dadosPix); // Se encontrar falhas, apresentará a mensagem de erro e encerrará a execução
 } else { // Caso seja estático enviará as informações contidas no $body
   $dadosPix = json_decode($body, true);
+  $dadosPix["txid"] = $txID;
 }
 
 $imagemQrCode = montaBrCode($dadosPix, $tipo, $pagoUmaVez, $cidade, $cep, $valorLivre, $tamanhoQrCode); // Monta o pix Copia e Cola e a imagem do QR Code

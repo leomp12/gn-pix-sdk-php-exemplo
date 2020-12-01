@@ -56,10 +56,10 @@ function montaBrCode($dadosPix, $tipo, $pagoUmaVez, $cidade, $cep, $valorLivre, 
 
     $payloadBrCode .= '61' . preencheCampo($cep); // [opcional] CEP da cidade onde é efetuada a transação.
 
-    if ($tipo === "dinamico") {
-      $aditional_data_field_template = '05' . preencheCampo($payload["txid"]); // [opcional] Identificador da transação.
-      $payloadBrCode .= '62' . preencheCampo($aditional_data_field_template);
-    }
+    $txID = ($tipo === "dinamico") ? $payload["txid"] : $dadosPix["txid"];
+    $aditional_data_field_template = '05' . preencheCampo($txID); // [opcional] Identificador da transação.
+    $payloadBrCode .= '62' . preencheCampo($aditional_data_field_template);
+
 
     $payloadBrCode .= "6304"; // Adiciona o campo do CRC no fim da linha do pix.
 
@@ -79,9 +79,9 @@ function montaBrCode($dadosPix, $tipo, $pagoUmaVez, $cidade, $cep, $valorLivre, 
                   document.execCommand('copy');
               };
           </script>";
- 
-    $imageString = gerarQrCode($payloadBrCode, $tamanhoQrCode);    
-    
+
+    $imageString = gerarQrCode($payloadBrCode, $tamanhoQrCode);
+
     // Exibe a imagem diretamente no navegador codificada em base64.
     return '<img src="data:image/png;base64,' . $imageString . '"></center>';
   } else {
