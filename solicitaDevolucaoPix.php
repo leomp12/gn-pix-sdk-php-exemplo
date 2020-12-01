@@ -19,8 +19,8 @@ require "./funcoes.php";
  * c) NAO_REALIZADO: indica que a devolução não pode ser realizada em função de algum erro durante a liquidação (exemplo: saldo insuficiente).
  */
 
-// Insira o identificador da transação (txID) que deseja solicitar a devolução
-$txID = "775ASPFF2GW0L63KJ6LHS5RZF0MC0S733WD";
+
+$id = getTxID('devolucao'); // Função gera um ID aleatório para representar unicamente uma devolução.
 
 // EndToEndId da transação (e2eid) que deseja consultar. Obs: O e2eid é gerado em cobranças que foram quitadas
 $e2eid = "E9040088820201121002700006627428";
@@ -37,7 +37,7 @@ $dadosToken = getAccessToken($configuracoes[$ambiente]["pix_url_auth"], $arq_cer
 $tokenType = $dadosToken['token_type'];
 $accessToken = $dadosToken['access_token'];
 
-$pix_url = $configuracoes[$ambiente]["pix_url"] . "/$e2eid/devolucao/$txID"; // Monta a url para a requisição de solicitação de devolução
+$pix_url = $configuracoes[$ambiente]["pix_url"] . "/$e2eid/devolucao/$id"; // Monta a url para a requisição de solicitação de devolução
 
 // Insira as informações que deseja atualizar. Comentar a linha caso não deseja atualizar algum campo
 $body = json_encode([
