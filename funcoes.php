@@ -15,11 +15,10 @@ function getTxID($tipo)
    # Esta rotina gera um txID de forma aleatória, atendendo à regex `[a-zA-Z0-9]{26,35}$` caso o QR Code seja dinâmico, e à regex [a-zA-Z0-9]{1,25} caso seja estático, conforme padrão bacen
    */
 
-  $id = ($tipo === "devolucao") ? "D" : "C"; // Se o tipo for devolução, o ID iniciará com "D", se não iniciará com "C" de cobrança
-  $quantidade = ($tipo === "dinamico") ? 34 : 24;
+  $quantidade = ($tipo === "dinamico") ? 35 : 25;
 
   for (
-    $id .= '', $i = 0, $z = strlen($a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789') - 1;
+    $id = '', $i = 0, $z = strlen($a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789') - 1;
     $i != $quantidade;
     $x = rand(0, $z), $id .= $a{
       $x}, $i++
