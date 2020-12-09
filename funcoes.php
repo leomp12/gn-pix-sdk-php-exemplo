@@ -18,12 +18,12 @@ function getTxID($tipo)
   $quantidade = ($tipo === "dinamico") ? 35 : 25;
 
   for (
-    $s = '', $i = 0, $z = strlen($a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 0123456789') - 1;
+    $id = '', $i = 0, $z = strlen($a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789') - 1;
     $i != $quantidade;
-    $x = rand(0, $z), $s .= $a{
+    $x = rand(0, $z), $id .= $a{
       $x}, $i++
   );
-  return $s;
+  return $id;
 }
 
 

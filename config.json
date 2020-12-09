@@ -1,6 +1,7 @@
 {
     "sandbox": true,
     "chave": "chavepix@email.com",
+    "recebedor": "Nome do recebedor",
     "homologacao": {
         "nome_certificado": "developmentCertificate.pem",
         "client_id": "Client_Id_...",
