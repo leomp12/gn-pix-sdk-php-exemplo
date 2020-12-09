@@ -1,4 +1,4 @@
-## [1.0.0] - 2020-12-09
+## [1.0.0](https://github.com/gerencianet/gn-pix-sdk-php-exemplo/releases/tag/1.0.0) - 2020-12-09
 
 ### Added
 
@@ -14,6 +14,6 @@
 
 - Verification of the "payload" when assembling the Qr Code.
 
-# [0.1.0] - 2020-11-26
+## [0.1.0](https://github.com/gerencianet/gn-pix-sdk-php-exemplo/releases/tag/0.1.0) - 2020-11-26
 
 - Initial release.
