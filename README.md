@@ -13,12 +13,13 @@ php 5.4, php 7.0 e php 7.3
 
 ## Como usar?
 Para começar, você deve configurar os parâmetros no arquivo config.json.
-Instancie as informações usando sua `chave PIX` vinculada à sua conta Gerencianet, `client_id`, `client_secret` da sua aplicação e `sandbox` igual a *true*, caso seu ambiente seja de Homologação, ou *false*, caso seja Produção.
+Instancie as informações usando sua `chave PIX` vinculada à sua conta Gerencianet, `recebedor` nome do recebedor, `client_id`, `client_secret` da sua aplicação e `sandbox` igual a *true*, caso seu ambiente seja de Homologação, ou *false*, caso seja Produção.
 
 ```json
 {
     "sandbox": true,
     "chave": "chavepix@email.com",
+    "recebedor": "Nome do recebedor",
     "homologacao": {
         "nome_certificado": "developmentCertificate.pem",
         "client_id": "Client_Id_...",
