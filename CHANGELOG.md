@@ -1,19 +1,19 @@
 ## [1.0.0](https://github.com/gerencianet/gn-pix-sdk-php-exemplo/releases/tag/1.0.0) - 2020-12-09
 
-### Added
+### Adicionado
 
-- Field "recebedor" in the "config.json" and in the "emitirPix.php" for mount the Qr Code.
-- Generate txID for "solicitaDevolucaoPix.php".
+- Parâmetro "recebedor" no "config.json" e no "emitirPix.php" utilizado para montar o EMV.
+- Função para gerar o id da devolução, em "solicitaDevolucaoPix.php".
  
-### Changed
-- Fix function `getTxID()`
-- Added field "recebedor"  in the config README example.
-- Case QR Code "dinamico" the txID receive `***` in the  "montaBrCode.php".
+### Alterado
+- Correção da função `getTxID()`.
+- Condição no "montaBrCode.php", caso QR Code for "dinamico" o ID 62-05 (ReferenceLabel) receberá `***`.
+- Adicionado parâmetro "recebedor" na configuração de exemplo do README.
  
-### Removed
+### Removido
 
-- Verification of the "payload" when assembling the Qr Code.
+- Verificação do "payload" ao montar o  BR Code.
 
 ## [0.1.0](https://github.com/gerencianet/gn-pix-sdk-php-exemplo/releases/tag/0.1.0) - 2020-11-26
 
-- Initial release.
+- Release inicial.
