@@ -77,5 +77,5 @@ function montaBrCode($dadosPix, $tipo, $pagoUmaVez, $nomeRecebedor, $cidade, $ce
   $imageString = gerarQrCode($payloadBrCode, $tamanhoQrCode);
 
   // Exibe a imagem diretamente no navegador codificada em base64.
-  return '<img src="data:image/png;base64,' . $imageString . '"></center>';
+  return '<img src="data:image/png;base64,' . $imageString . '"></img>';
 }
